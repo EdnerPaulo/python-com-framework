@@ -9,12 +9,45 @@
 #     - `info()`: mostra todas as informações do livro
         
 #         Crie dois livros, faça empréstimos e devoluções.
-class Livro:
+# class Livro:
 
-         titulo`, `autor`, `ano`, `disponivel
+#     def __init__(self,titulo,autor,ano): 
+#         self.titulo = titulo
+#         self.autor = autor
+#         self.ano = ano
+#         self.disponivel = True
+        
+#     def emprestar(self):
+   
+#         if  self.disponivel:
+#             self.disponivel = False
+#             print('Livro emprestado\n')
+#         else:
+#             print('Indisponível\n')
+    
+#     def devolver(self):
+#         self.disponivel = True
+#         print('Livro Devolvido')
 
-# ---
+#     def info(self):
+#         status = "Disponível" if self.disponivel else "Indisponível"
+#         print(f"\nTítulo: {self.titulo}\nAutor: {self.autor}\nAno: {self.ano}\nStatus: {status}")
+        
+# livro = Livro("O Hobbit", "J. R. R. Tolkien", 1937)
+# livro1 = Livro("Continnetum", "Edner Paulo", 2024)
+# livro.info()
+# livro.emprestar()
+# livro.devolver()
+# livro1.info()
+# livro1.emprestar()
+# livro1.devolver()
 
+
+# # ---
+#  self.titulo = input('Escolha o livro pelo Titulo: ')
+#             self.autor = input('Qual o nome do Autor: ')
+#             self.ano = int(input('Qual o ano de Publicação: '))
+#             self.disponivel = input('O livro está desponivel(sim\não): ')
 # ### **2. Classe Funcionário**
 
 # Crie uma classe `Funcionario` com:
@@ -26,7 +59,33 @@ class Livro:
 #     - `exibir_dados()`: exibe todas as informações
         
 #         Crie um funcionário, aumente o salário e mostre os dados atualizados.
-        
+class Funcionario:
+    def __init__(self):
+        self.nome = input('Qual o Nome do Funcionario: ')
+        self.cargo = input('Qual o Cargo do Funcionario: ')
+        self.salario_base = float(input('Qual o Salario Base do Funcionario: '))
+
+    def calcular_bonus(self):
+        bonus =  self.salario_base * 0.10
+        print(f'10% do salário base é {bonus}')
+
+    def aumentar_salario(self):
+        percentual = float(input(f"Quantos percento de aumento {self.nome} vai ganhar: % "))
+        aumento = float(percentual/100)* self.salario_base
+        print(f'O aumento foi de {aumento}')
+        self.salario_base +=aumento
+        return aumento
+      
+    
+    def exibir_dados(self):
+        novo_salario = self.salario_base
+        print(f'o Funcionario {self.nome} no cargo de {self.cargo} com o salario atualizado de {novo_salario}')
+
+colaborador = Funcionario()
+colaborador.aumentar_salario()
+colaborador.calcular_bonus()
+colaborador.exibir_dados()
+
 
 # ---
 

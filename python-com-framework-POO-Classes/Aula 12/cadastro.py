@@ -141,34 +141,34 @@
         
 #         Crie um aluno, adicione 3 notas e exiba sua situação.
 
-# class Aluno:
-#     def __init__(self):
-#         self.nomeAluno = input("Qual o nome do Aluno: ")
-#         self.matriculaAluno = int(input("Qual o numero de Matricula do Aluno: "))
-#         self.notas = []
+class Aluno:
+    def __init__(self):
+        self.nomeAluno = input("Qual o nome do Aluno: ")
+        self.matriculaAluno = int(input("Qual o numero de Matricula do Aluno: "))
+        self.notas = []
     
-#     def adicionar_nota(self):
-#         for i in range(1,4):
-#             nota = float(input(f"Digite a {i}ª nota do(a) Aluno(a) {self.nomeAluno}: "))
-#             self.notas.append(nota)
+    def adicionar_nota(self):
+        for i in range(1,4):
+            nota = float(input(f"Digite a {i}ª nota do(a) Aluno(a) {self.nomeAluno}: "))
+            self.notas.append(nota)
        
     
-#     def calcular_media(self):
-#         media = sum(self.notas)/ len(self.notas)
-#         return media 
+    def calcular_media(self):
+        media = sum(self.notas)/ len(self.notas)
+        return media 
     
-#     def situacao(self):
-#         media = self.calcular_media()
-#         print(f"A sua Media foi {media:.1f}")
-#         if media < 5 :
-#             print("Reprovado")
-#         elif 5 <= media < 7 :
-#             print("Recuperação")
-#         else:
-#             print("Aprovado")
+    def situacao(self):
+        media = self.calcular_media()
+        print(f"A sua Media foi {media:.1f}")
+        if media < 5 :
+            print("Reprovado")
+        elif 5 <= media < 7 :
+            print("Recuperação")
+        else:
+            print("Aprovado")
 
-# notasAluno = Aluno()
-# notasAluno.adicionar_nota()
-# notasAluno.calcular_media()
-# notasAluno.situacao()
+notasAluno = Aluno()
+notasAluno.adicionar_nota()
+notasAluno.calcular_media()
+notasAluno.situacao()
         
