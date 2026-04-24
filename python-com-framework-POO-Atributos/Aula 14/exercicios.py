@@ -110,32 +110,33 @@
     
 #     Crie uma conta, realize operações e exiba o saldo.
 
-class ContaBancaria:
-    def __init__(self, deposito, sacar):
-        self.valor_deposito = deposito
-        self.valor_sacar = sacar
-        self.__saldo = 50   # atributo privado com Usa um underscore `__`.
+# class ContaBancaria:
+#     def __init__(self, deposito, sacar):
+#         self.valor_deposito = deposito
+#         self.valor_sacar = sacar
+#         self.__saldo = 50   # atributo privado com Usa um underscore `__`.
 
-    def depositar(self):
-        self.__saldo += self.valor_deposito # cria um novo saldo com o deposito 
-        print(f'O valor depositado foi R$: {self.valor_deposito}')
+#     def depositar(self):
+#         self.__saldo += self.valor_deposito # cria um novo saldo com o deposito 
+#         print(f'O valor depositado foi R$: {self.valor_deposito}')
 
-    def sacar(self):
-        if  self.__saldo > self.valor_sacar  : # verifica que tem saldo suficiente
-            self.__saldo -= self.valor_sacar # se tiver efetua o saque
-            print(f'o valor sacado foi R$: {self.valor_sacar}')
-        else:
-            print(f'Saque indisponivel, Saldo Insuficiente')
+#     def sacar(self):
+#         if  self.__saldo > self.valor_sacar  : # verifica que tem saldo suficiente
+#             self.__saldo -= self.valor_sacar # se tiver efetua o saque
+#             print(f'o valor sacado foi R$: {self.valor_sacar}')
+#         else:
+#             print(f'Saque indisponivel, Saldo Insuficiente')
 
-    def mostrar_saldo(self):
-        novo_saldo = self.__saldo # mostra o nova saldo atualizado 
-        print(f'Seu saldo atual é de R$: {novo_saldo}')
+#     def mostrar_saldo(self):
+#         novo_saldo = self.__saldo # mostra o nova saldo atualizado 
+#         print(f'Seu saldo atual é de R$: {novo_saldo}')
         
 
-c = ContaBancaria(1000,500)
-c.depositar()
-c.sacar()
-c.mostrar_saldo()
+# c = ContaBancaria(1000,500)
+# c.mostrar_saldo()
+# c.depositar()
+# c.sacar()
+# c.mostrar_saldo()
 
 # ---
 
@@ -148,13 +149,50 @@ c.mostrar_saldo()
 # - `situacao()` – retorna "Aprovado" se média >= 7, "Recuperação" se >= 5, "Reprovado" caso contrário.
     
 #     Teste com um aluno e algumas notas.
+class Aluno:
+
+    def __init__(self,nome,matricula):
+        self.nome = nome
+        self.matricula = matricula
+        self.__notas = []
+
+    def adicionar_nota(self,nota, n):
+        for i in range(n):
+            self.__notas.append(nota)
+        return self.__notas
     
+    def calcular_media(self):
+        media = sum(self.__notas)/len(self.__notas)
+        return media
+    
+    def situacao(self):
+        media = self.calcular_media()
+        if media >= 7 :
+            return 'Aprovado'
+        elif 5 >= media < 7:
+            return 'Recuperação'
+        else:
+            return 'Reprovado'
+    
+
+
 
 # ---
 
 # ### **Exercício 6 – Data (validação)**
 
 # Crie uma classe `Data` com atributos `dia`, `mes`, `ano`. No `__init__`, valide se a data é válida (considere meses com 30/31 dias e ano bissexto para fevereiro). Use propriedades para garantir que alterações futuras também sejam validadas. Adicione um método `__str__` que retorna a data no formato `dd/mm/aaaa`.
+# class Data:
+#     def __init__(self, dia, mes, ano):
+#         self.dia = dia
+#         self.mes = mes
+#         self.ano = ano
+        
+
+#     def __str__(self):
+        
+
+
 
 # ---
 
