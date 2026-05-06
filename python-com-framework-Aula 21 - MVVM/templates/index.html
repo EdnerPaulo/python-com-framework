@@ -1,7 +1,7 @@
 <h1>Consulta de CEP</h1>
 
 <form method="POST">
-    <input name="cep" placeholder="Digite o CEP"></Input>
+    <input name="cep" placeholder="Digite o CEP"></input>
     <button>Buscar</button>
     {% if result%}
         {% if result.erro %}
@@ -15,3 +15,8 @@
     {% endif%}
 
 </form>
+<!-- para rodar o flask com o Jinja — Jinja Documentation  com o html,
+vc tem que digitar no prompt
+python run.py 
+e clicar em 
+ Running on http://127.0.0.1:5000-->

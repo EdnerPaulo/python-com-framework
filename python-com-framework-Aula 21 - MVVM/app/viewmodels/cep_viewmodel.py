@@ -15,7 +15,7 @@ def get_cep_data(cep):
         
         "logradouro": data.get('logradouro'),
         "bairro": data.get('bairro'),
-        "cidade": data.get('cidade'),
+        "cidade": data.get('cidade') or data.get('localidade'),
         "estado": data.get('uf') or data.get('estado')
 
     }
