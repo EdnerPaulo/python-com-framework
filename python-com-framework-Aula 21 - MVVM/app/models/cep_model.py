@@ -1,0 +1,38 @@
+import requests
+
+from config import BASE_URL,FALBACK_URL
+
+def buscar_cep_api_principal(cep):
+    try:
+        reponse = requests.get(
+            f"{BASE_URL}{cep}/json/",
+            headers={'Accept': 'application/json'},
+            timeout=5 
+        )
+        if reponse.status_code== 200:
+            return reponse.json()
+        
+        return None
+    except requests.exceptions.RequestException:
+        return None
+    
+def buscar_cep_api_fallback(cep):
+    try:
+        reponse = requests.get(
+            f"{FALBACK_URL}{cep}/json/",
+            headers={'Accept': 'application/json'},
+            timeout=5 
+        )
+        if reponse.status_code== 200:
+            return reponse.json()
+        
+        return None
+    except requests.exceptions.RequestException:
+        return None
+    
+def buscar_cep(cep):
+    data = buscar_cep_api_principal(cep)
+    if data:
+        return data
+    
+    return buscar_cep_api_fallback(cep)
